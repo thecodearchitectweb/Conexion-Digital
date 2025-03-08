@@ -10,4 +10,43 @@ Repositorio:
     gh repo clone thecodearchitectweb/Conexion-Digital
 
 
+
+    git config --global user.email "thecodearchitect.web@gmail.com"
+    git config --global user.name "Alex Alejandro Oviedo Gonzalez"
+
+
+Para ver ramas disponibles en GitHGub
+
+    Primero descargamos, Descarga todas las actualizaciones de todas las ramas remotas, pero sin fusionarlas con tu código local. 
+    
+        git fetch --all
+
+    Para cambiar de ramas utilizamos
+
+        git switch (Rama a la cual quiere cambiar)
+
+    Este comando fusiona (merge) los cambios más recientes de la rama remota origin/develop con tu rama develop local. tu escoges la rama.
+
+        git merge origin/develop
+
+    Subir los cambios a la rama remota
+
+        git push origin develop
+
+    Si es una nueva rama que aún no existe en GitHub, usa:
+
+        git push --set-upstream origin develop
+
+
+RESUMEN
+
+    1️⃣ Verificaste la rama → git branch
+    2️⃣ Revisaste cambios pendientes → git status
+    3️⃣ Agregaste archivos al staging → git add .
+    4️⃣ Hiciste un commit → git commit -m "mensaje"
+    5️⃣ Subiste los cambios → git push origin develop
+
+
+
+
     
