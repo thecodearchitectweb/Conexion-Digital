@@ -49,4 +49,78 @@ RESUMEN
 
 
 
-    
+    1️⃣   git checkout -b develop → Crea y cambia a la rama develop desde main.
+    2️⃣   git push --set-upstream origin develop → Sube la rama develop al remoto y la vincula para futuros push/pull. 🚀
+
+
+
+********************************************************************************************************************************
+
+CREACION DE RAMAS POR CONSOLA, BUENAS PRACTICAS.
+
+    Renombrar la rama master
+
+        # Renombrar la rama master a main localmente
+        git branch -m master main  
+
+        # Actualizar en el remoto
+        git push origin -u main  
+
+        # Eliminar la referencia a master en remoto (si existía)
+        git push origin --delete master  
+
+        # Ajustar la rama predeterminada en GitHub/GitLab
+        git remote set-head origin main  
+
+
+
+
+    # Crear la rama develop desde main
+        git checkout -b develop  # Crea y cambia a la rama "develop" desde "main".
+        git push --set-upstream origin develop  # Sube "develop" al remoto y la vincula para futuros push/pull.
+
+    # Crear ramas de módulos desde develop
+        git checkout develop  # Cambia a la rama "develop".
+
+        git checkout -b feature/incapacidades  # Crea y cambia a la rama "feature/incapacidades" para desarrollar el módulo de incapacidades.
+        git push --set-upstream origin feature/incapacidades  # Sube la rama al remoto y la vincula para futuros push/pull.
+
+        git checkout develop  # Vuelve a la rama "develop".
+
+        git checkout -b feature/vacaciones  # Crea y cambia a la rama "feature/vacaciones" para desarrollar el módulo de vacaciones.
+        git push --set-upstream origin feature/vacaciones  # Sube la rama al remoto y la vincula para futuros push/pull.
+
+        git checkout develop  # Vuelve a la rama "develop".
+
+        git checkout -b feature/login  # Crea y cambia a la rama "feature/login" para desarrollar el módulo de login.
+        git push --set-upstream origin feature/login  # Sube la rama al remoto y la vincula para futuros push/pull.
+
+
+
+*********************************************************************************************************************************************************************************************
+
+
+
+Pasos para sincronizar todas las ramas sin fusionarlas
+
+
+    # Obtener todas las actualizaciones del remoto
+        git fetch --all  
+
+    # Actualizar cada rama sin hacer merge
+        git checkout develop
+        git pull origin develop --rebase  # Trae los últimos cambios de develop
+
+        git checkout feature/incapacidades
+        git pull origin feature/incapacidades --rebase  # Actualiza sin fusionar
+
+        git checkout feature/vacaciones
+        git pull origin feature/vacaciones --rebase  # Actualiza sin fusionar
+
+        git checkout feature/login
+        git pull origin feature/login --rebase  # Actualiza sin fusionar
+
+
+
+
+*********************************************************************************************************************************************************************************************
